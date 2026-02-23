@@ -1,0 +1,221 @@
+/* Admin Enrollments */
+.page-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.page-header-text h2 {
+    font-size: 22px;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: -0.02em;
+    margin-bottom: 4px;
+}
+
+.page-header-text p {
+    font-size: 13px;
+    color: #64748b;
+}
+
+.page-header-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+/* Filter bar */
+.filter-bar {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.filter-search {
+    position: relative;
+    flex: 1;
+    min-width: 220px;
+    max-width: 360px;
+}
+
+.filter-search .material-symbols-outlined {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #475569;
+    pointer-events: none;
+}
+
+.filter-input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 10px 10px 10px 40px;
+    font-size: 13px;
+    color: #e2e8f0;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+.filter-input:focus {
+    border-color: #facc14;
+}
+
+.filter-select {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: #94a3b8;
+    font-family: inherit;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.filter-select:focus {
+    border-color: #facc14;
+    color: #fff;
+}
+
+.filter-tab-group {
+    display: flex;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.filter-tab {
+    padding: 8px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #475569;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: inherit;
+    transition: all 0.2s;
+}
+
+.filter-tab.active {
+    background: rgba(250, 204, 20, 0.12);
+    color: #facc14;
+}
+
+.filter-tab:hover:not(.active) {
+    color: #e2e8f0;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.pagination-info {
+    font-size: 12px;
+    color: #475569;
+}
+
+.pagination-btns {
+    display: flex;
+    gap: 6px;
+}
+
+.page-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #94a3b8;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+    transition: all 0.2s;
+}
+
+.page-btn.active {
+    background: #facc14;
+    color: #0B0F19;
+    border-color: #facc14;
+}
+
+.page-btn:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+}
+
+.page-btn .material-symbols-outlined {
+    font-size: 16px;
+}
+
+/* Enrollment detail panel content */
+.detail-student-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.detail-student-card .admin-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    font-size: 18px;
+}
+
+.detail-student-name {
+    font-size: 16px;
+    font-weight: 800;
+    color: #fff;
+}
+
+.detail-student-meta {
+    font-size: 12px;
+    color: #64748b;
+    margin-top: 2px;
+}
+
+/* Empty state */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #475569;
+}
+
+.empty-state .material-symbols-outlined {
+    font-size: 48px;
+    margin-bottom: 12px;
+    opacity: 0.4;
+}
+
+.empty-state p {
+    font-size: 14px;
+}

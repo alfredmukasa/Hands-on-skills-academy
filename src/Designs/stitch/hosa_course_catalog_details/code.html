@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HOSA Course Catalog Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#facc14",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#0f172a", // Deep slate blue base for 2026 aesthetic
+                        "glass-white": "rgba(255, 255, 255, 0.03)",
+                        "glass-border": "rgba(255, 255, 255, 0.1)",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        .ambient-glow {
+            background: radial-gradient(circle at 50% 50%, rgba(250, 204, 20, 0.05) 0%, transparent 70%);
+        }
+        .sidebar-active {
+            background: rgba(250, 204, 20, 0.1);
+            border-right: 3px solid #facc14;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen selection:bg-primary selection:text-background-dark">
+<!-- Ambient Background Elements -->
+<div class="fixed inset-0 overflow-hidden pointer-events-none">
+<div class="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-primary/10 blur-[120px] rounded-full"></div>
+<div class="absolute top-[40%] -right-[5%] w-[30%] h-[30%] bg-blue-500/10 blur-[100px] rounded-full"></div>
+</div>
+<div class="relative flex flex-col min-h-screen">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 w-full border-b border-glass-border bg-background-dark/50 backdrop-blur-xl px-6 lg:px-12 py-4">
+<div class="max-w-7xl mx-auto flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="size-10 bg-primary rounded-xl flex items-center justify-center text-background-dark">
+<span class="material-symbols-outlined font-bold">handyman</span>
+</div>
+<h1 class="text-xl font-800 tracking-tight text-slate-100 uppercase">HOSA <span class="text-primary font-medium">Academy</span></h1>
+</div>
+<div class="hidden md:flex items-center gap-8 text-sm font-medium">
+<a class="text-primary" href="#">Catalog</a>
+<a class="hover:text-primary transition-colors" href="#">Resources</a>
+<a class="hover:text-primary transition-colors" href="#">Certifications</a>
+<a class="hover:text-primary transition-colors" href="#">Support</a>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="bg-glass-white border border-glass-border rounded-full py-2 pl-10 pr-4 text-sm focus:ring-1 focus:ring-primary focus:border-primary w-64 outline-none transition-all" placeholder="Search courses..." type="text"/>
+</div>
+<button class="bg-primary hover:bg-yellow-400 text-background-dark font-bold px-6 py-2 rounded-full text-sm transition-all shadow-lg shadow-primary/20">
+                        Student Portal
+                    </button>
+</div>
+</div>
+</header>
+<div class="flex flex-1 w-full max-w-7xl mx-auto px-6 lg:px-12 py-8 gap-8">
+<!-- Sidebar Navigation -->
+<aside class="hidden lg:block w-72 shrink-0">
+<div class="sticky top-28 glass-card rounded-xl overflow-hidden p-2">
+<div class="px-4 py-3">
+<h3 class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4">Course Categories</h3>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-slate-300 hover:bg-glass-white group transition-all" href="#">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">memory</span>
+<span class="text-sm font-semibold">NATED Engineering</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg sidebar-active text-primary group transition-all" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">construction</span>
+<span class="text-sm font-semibold">Mining Skills</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-slate-300 hover:bg-glass-white group transition-all" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">bolt</span>
+<span class="text-sm font-semibold">Electrical Trade</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-slate-300 hover:bg-glass-white group transition-all" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">health_and_safety</span>
+<span class="text-sm font-semibold">Safety Training</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-slate-300 hover:bg-glass-white group transition-all" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">history_edu</span>
+<span class="text-sm font-semibold">Artisanship</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-slate-300 hover:bg-glass-white group transition-all" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">model_training</span>
+<span class="text-sm font-semibold">Short Courses</span>
+</a>
+</nav>
+</div>
+<div class="mt-4 p-4 border-t border-glass-border">
+<div class="p-4 rounded-xl bg-primary/5 border border-primary/20">
+<p class="text-[10px] font-bold text-primary uppercase mb-1">Upcoming Intake</p>
+<p class="text-sm font-medium text-slate-200">2026 Q1 Enrolment</p>
+<p class="text-xs text-slate-400 mt-2">Limited seats available for on-site training sessions.</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 space-y-10">
+<!-- Page Header -->
+<div class="space-y-2">
+<div class="flex items-center gap-2 text-primary text-sm font-bold uppercase tracking-tighter">
+<span class="material-symbols-outlined text-base">explore</span>
+<span>Mining &amp; Engineering Faculty</span>
+</div>
+<h2 class="text-4xl lg:text-5xl font-800 tracking-tight text-slate-100">Course <span class="text-primary">Catalog</span></h2>
+<p class="text-slate-400 max-w-2xl text-lg leading-relaxed">
+                        Industry-accredited certifications designed for the future of resource extraction and infrastructure development.
+                    </p>
+</div>
+<!-- Course Grid -->
+<div class="grid grid-cols-1 gap-8">
+<!-- Mining Skills Large Card -->
+<div class="glass-card rounded-xl overflow-hidden flex flex-col md:flex-row group transition-all hover:border-primary/30">
+<div class="relative w-full md:w-2/5 aspect-square md:aspect-auto overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent z-10"></div>
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Modern underground mining machinery operational site" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAJQT4csdH-Lzm8HslKbOW69AFTvnyihxarNSYfRREcWZJ0NlTV9CYwPuZMBH3P4XYqQQvzOXMrpcKbrP_BEUG32-TLVqw1-vp0lA4PMn2agVJRA32jzjub7jhgoBcb3ocvusx0l9hVYCaeoo3i6t78or2oniEvQHa9nG5MukqJsnOlakcvsS2alanIQWHdq6LLDJSz5JR36HqAmx9jV_jY7HbZ9MRyDMjOAwak335d8SDQP7zu3ZC9YXm8UxLDjgqGYFwrvO8l-5w"/>
+<div class="absolute bottom-6 left-6 z-20">
+<span class="bg-primary text-background-dark text-[10px] font-900 px-3 py-1 rounded-full uppercase tracking-widest mb-2 inline-block">Specialized</span>
+<h3 class="text-2xl font-800 text-white">Mining Skills</h3>
+</div>
+</div>
+<div class="flex-1 p-8 flex flex-col justify-between">
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1 text-xs font-bold text-slate-400">
+<span class="material-symbols-outlined text-primary text-lg">schedule</span>
+<span>12 Months</span>
+</div>
+<div class="flex items-center gap-1 text-xs font-bold text-slate-400">
+<span class="material-symbols-outlined text-primary text-lg">workspace_premium</span>
+<span>NQF Level 4</span>
+</div>
+</div>
+<p class="text-slate-300 leading-relaxed">Comprehensive technical training focused on underground operations, safety protocols, and heavy machinery mastery.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-sm text-slate-400">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span>Advanced Underground Excavation Techniques</span>
+</li>
+<li class="flex items-center gap-3 text-sm text-slate-400">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span>Occupational Health &amp; Global Safety Standards</span>
+</li>
+<li class="flex items-center gap-3 text-sm text-slate-400">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span>Heavy Earthmoving Machinery (HEM) Operations</span>
+</li>
+</ul>
+</div>
+<div class="mt-8 pt-8 border-t border-glass-border flex items-center justify-between">
+<div>
+<p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Starting from</p>
+<p class="text-2xl font-800 text-white">R12,500 <span class="text-xs text-slate-500 font-normal">/ semester</span></p>
+</div>
+<button class="bg-primary hover:bg-yellow-400 text-background-dark font-800 px-8 py-3 rounded-full flex items-center gap-2 group transition-all">
+                                    Enroll Now
+                                    <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- NATED Engineering Large Card -->
+<div class="glass-card rounded-xl overflow-hidden flex flex-col md:flex-row group transition-all hover:border-primary/30">
+<div class="relative w-full md:w-2/5 aspect-square md:aspect-auto overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent z-10"></div>
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Engineer working with industrial automation robotics" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQ1c7EYfb2jWt8qjECUyHfg33_reqim-OXLFSOFIsOFIrLM11d0aZwGl1y_if1cjgTwZtYP1UqX5-yzixWJQms0aGHbG5ybu2WFpiTnyDGjSJP-pJ_GGC8xiiLeWVux-jqbabi0yIFlNc9a0TqDHbJ9xS830xxQwPtvOlSgQa0YzJ2tB0TJLfGbvbgi0BCoFNDXRGku6YFHmf0FmroWg1mrj-oZ4BWt0hJj6kCtPwV7Dwwd31QQ-hA8tbw0oZp3vpIndCCbwFaoFup"/>
+<div class="absolute bottom-6 left-6 z-20">
+<span class="bg-blue-500 text-white text-[10px] font-900 px-3 py-1 rounded-full uppercase tracking-widest mb-2 inline-block">Accredited</span>
+<h3 class="text-2xl font-800 text-white">NATED Engineering</h3>
+</div>
+</div>
+<div class="flex-1 p-8 flex flex-col justify-between">
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1 text-xs font-bold text-slate-400">
+<span class="material-symbols-outlined text-primary text-lg">schedule</span>
+<span>24 Months</span>
+</div>
+<div class="flex items-center gap-1 text-xs font-bold text-slate-400">
+<span class="material-symbols-outlined text-primary text-lg">workspace_premium</span>
+<span>NQF Level 6</span>
+</div>
+</div>
+<p class="text-slate-300 leading-relaxed">Our flagship engineering program combining theoretical depth with immersive industry placement opportunities.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-sm text-slate-400">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span>Integrated Theory &amp; Practical Workshop Sessions</span>
+</li>
+<li class="flex items-center gap-3 text-sm text-slate-400">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span>International Industry Placement Support</span>
+</li>
+<li class="flex items-center gap-3 text-sm text-slate-400">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span>Specialized Mechanical &amp; Electrical Streams</span>
+</li>
+</ul>
+</div>
+<div class="mt-8 pt-8 border-t border-glass-border flex items-center justify-between">
+<div>
+<p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Starting from</p>
+<p class="text-2xl font-800 text-white">R18,200 <span class="text-xs text-slate-500 font-normal">/ semester</span></p>
+</div>
+<button class="bg-primary hover:bg-yellow-400 text-background-dark font-800 px-8 py-3 rounded-full flex items-center gap-2 group transition-all">
+                                    Enroll Now
+                                    <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Safety Training (Horizontal Grid style) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="glass-card p-8 rounded-xl flex flex-col justify-between group hover:border-primary/30 transition-all">
+<div>
+<div class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<h4 class="text-xl font-800 text-white mb-3">Safety Training</h4>
+<p class="text-sm text-slate-400 leading-relaxed mb-6">Critical safety certifications for high-risk industrial environments.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-glass-white border border-glass-border px-3 py-1 rounded-full text-[10px] text-slate-300 uppercase font-bold tracking-tighter">OSHA 2026</span>
+<span class="bg-glass-white border border-glass-border px-3 py-1 rounded-full text-[10px] text-slate-300 uppercase font-bold tracking-tighter">HazMat</span>
+</div>
+</div>
+<button class="mt-8 text-primary font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">
+                                View Modules <span class="material-symbols-outlined text-base">east</span>
+</button>
+</div>
+<div class="glass-card p-8 rounded-xl flex flex-col justify-between group hover:border-primary/30 transition-all">
+<div>
+<div class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+<h4 class="text-xl font-800 text-white mb-3">Electrical Trade</h4>
+<p class="text-sm text-slate-400 leading-relaxed mb-6">Master electrical systems, from residential wiring to heavy industrial grids.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-glass-white border border-glass-border px-3 py-1 rounded-full text-[10px] text-slate-300 uppercase font-bold tracking-tighter">3-Phase Systems</span>
+<span class="bg-glass-white border border-glass-border px-3 py-1 rounded-full text-[10px] text-slate-300 uppercase font-bold tracking-tighter">Trade Test Prep</span>
+</div>
+</div>
+<button class="mt-8 text-primary font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">
+                                View Modules <span class="material-symbols-outlined text-base">east</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Sticky Bottom Bar (Mobile/Quick Access) -->
+<div class="lg:hidden sticky bottom-6 left-1/2 -translate-x-1/2 z-50 w-[90%] glass-card rounded-full p-2 flex items-center justify-around">
+<button class="size-12 flex items-center justify-center text-primary"><span class="material-symbols-outlined">home</span></button>
+<button class="size-12 flex items-center justify-center bg-primary text-background-dark rounded-full"><span class="material-symbols-outlined">apps</span></button>
+<button class="size-12 flex items-center justify-center text-slate-400"><span class="material-symbols-outlined">search</span></button>
+<button class="size-12 flex items-center justify-center text-slate-400"><span class="material-symbols-outlined">person</span></button>
+</div>
+<!-- Footer -->
+<footer class="mt-20 border-t border-glass-border py-12 px-6 bg-background-dark/30">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-4 opacity-50">
+<div class="size-8 bg-slate-400 rounded-lg flex items-center justify-center text-background-dark">
+<span class="material-symbols-outlined font-bold text-sm">handyman</span>
+</div>
+<span class="text-sm font-bold tracking-widest uppercase">Hands On Skills Academy</span>
+</div>
+<div class="flex gap-8 text-xs font-bold text-slate-500 uppercase tracking-widest">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Accreditations</a>
+<a class="hover:text-primary transition-colors" href="#">Contact Support</a>
+</div>
+<p class="text-xs text-slate-600 font-medium">© 2026 HOSA Academy. Future-Ready Engineering Excellence.</p>
+</div>
+</footer>
+</div>
+</body></html>

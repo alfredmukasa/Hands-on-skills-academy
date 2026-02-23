@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HOSA Bento Course Grid</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#facc14",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#0B0F19",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0B0F19;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(250, 204, 20, 0.5);
+            box-shadow: 0 0 30px rgba(250, 204, 20, 0.15);
+            transform: translateY(-4px);
+        }
+        .glass-pill {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .marquee-container {
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 40s linear infinite;
+        }
+        .floating-icon {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 px-6 py-4">
+<div class="max-w-7xl mx-auto glass-card rounded-full px-8 py-3 flex items-center justify-between">
+<div class="flex items-center gap-12">
+<div class="flex items-center gap-3">
+<div class="bg-primary p-1.5 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-background-dark font-bold text-xl">precision_manufacturing</span>
+</div>
+<h1 class="text-xl font-extrabold tracking-tight text-slate-100">HOSA</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold text-slate-300 hover:text-primary transition-colors" href="#">Mining</a>
+<a class="text-sm font-semibold text-slate-300 hover:text-primary transition-colors" href="#">Engineering</a>
+<a class="text-sm font-semibold text-slate-300 hover:text-primary transition-colors" href="#">NATED</a>
+<a class="text-sm font-semibold text-slate-300 hover:text-primary transition-colors" href="#">Matric Rewrite</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-300 hover:text-primary">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="bg-primary hover:bg-primary/90 text-background-dark px-6 py-2 rounded-full text-sm font-bold transition-all transform active:scale-95">
+                    Enroll Now
+                </button>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-20 px-6">
+<div class="max-w-7xl mx-auto">
+<!-- Header Section -->
+<div class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="max-w-2xl">
+<h2 class="text-5xl md:text-6xl font-black mb-6 tracking-tight leading-[1.1]">
+                        HOSA Bento <br/>
+<span class="text-primary">Course Grid</span>
+</h2>
+<p class="text-lg text-slate-400 font-medium">
+                        Redefining Engineering and Mining Excellence through immersive training and industry-standard certifications.
+                    </p>
+</div>
+<div class="flex gap-4">
+<button class="glass-pill px-8 py-4 rounded-full flex items-center gap-3 text-sm font-bold hover:bg-white/10 transition-all">
+                        View All Courses
+                        <span class="material-symbols-outlined text-primary">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Bento Grid Section -->
+<div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 grid-rows-2 gap-4 h-auto lg:h-[600px]">
+<!-- Mining Excellence Card (Large) -->
+<div class="md:col-span-2 lg:col-span-3 row-span-2 glass-card rounded-[24px] p-8 relative overflow-hidden flex flex-col justify-end group">
+<div class="absolute top-0 right-0 p-8 floating-icon opacity-20 group-hover:opacity-100 transition-opacity duration-500">
+<span class="material-symbols-outlined text-9xl text-primary">construction</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/40 to-transparent z-0"></div>
+<img alt="Mining machinery" class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30 group-hover:scale-110 transition-transform duration-700" data-alt="Underground mining machinery in dark cave" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6hJwNxRJTM97VGRR6fBAMoC9Vkrn1az4zkFPyBiUM3ifjjJ7-GinUxiUqnIUK6MyGme-8c6XzeYTvExltukK-omhUDZrAsEM5J-1cvjL6I4fYC_SJcAYflmJBVV-lAGVLo4cSS4PPrB9KxL9nYA6MEpDvUExX19-pj7FkhV5oO9m-Hxgs4anrw5ADztqiJPPdmVB3eDXp0kLP5QZT8N_a8SYeFq2qeLkbpb0KQ5ogwuxJcxV3onqM6feupJrIVaBmNY9zSUXpokAM"/>
+<div class="relative z-10">
+<span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 inline-block">Industry Leader</span>
+<h3 class="text-3xl font-bold text-white mb-3">Mining Excellence</h3>
+<p class="text-slate-400 mb-6 max-w-sm">Master surface and underground mining with high-fidelity simulation training and safety protocols.</p>
+<ul class="flex flex-wrap gap-2">
+<li class="glass-pill px-3 py-1.5 rounded-full text-xs font-medium">Rock Breaking</li>
+<li class="glass-pill px-3 py-1.5 rounded-full text-xs font-medium">Mine Health &amp; Safety</li>
+<li class="glass-pill px-3 py-1.5 rounded-full text-xs font-medium">Simulations</li>
+</ul>
+</div>
+</div>
+<!-- Engineering Trades Card (Medium) -->
+<div class="md:col-span-2 lg:col-span-3 glass-card rounded-[24px] p-8 relative overflow-hidden flex flex-col justify-between group">
+<div class="flex justify-between items-start relative z-10">
+<div>
+<span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 inline-block">Hands-on</span>
+<h3 class="text-2xl font-bold text-white mb-2">Engineering Trades</h3>
+</div>
+<div class="floating-icon">
+<span class="material-symbols-outlined text-5xl text-primary/80">settings_suggest</span>
+</div>
+</div>
+<div class="relative z-10">
+<p class="text-slate-400 text-sm mb-4">Electrical, Mechanical, and Civil engineering workshops equipped with the latest tech.</p>
+<a class="text-primary text-sm font-bold flex items-center gap-2 group/link" href="#">
+                            Explore Workshops
+                            <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">east</span>
+</a>
+</div>
+<div class="absolute -bottom-10 -right-10 w-40 h-40 bg-primary/10 blur-[60px] rounded-full group-hover:bg-primary/20 transition-all"></div>
+</div>
+<!-- NATED Diplomas (Small Square) -->
+<div class="md:col-span-1 lg:col-span-1.5 glass-card rounded-[24px] p-6 flex flex-col justify-between group">
+<div class="bg-white/5 w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary">school</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-white mb-2">NATED Diplomas</h3>
+<p class="text-slate-400 text-xs">National technical qualifications N1-N6 for specialized careers.</p>
+</div>
+</div>
+<!-- Matric Rewrite (Small Square) -->
+<div class="md:col-span-1 lg:col-span-1.5 glass-card rounded-[24px] p-6 flex flex-col justify-between group">
+<div class="bg-white/5 w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary">edit_note</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-white mb-2">Matric Rewrite</h3>
+<p class="text-slate-400 text-xs">A second chance at excellence. Upgrade your results with expert tutoring.</p>
+</div>
+</div>
+</div>
+<!-- Testimonial Marquee Section -->
+<div class="mt-20">
+<h4 class="text-center text-sm font-bold text-slate-500 uppercase tracking-widest mb-10">Trusted by over 10,000+ Students</h4>
+<div class="marquee-container overflow-hidden py-4">
+<div class="animate-marquee gap-6">
+<!-- Testimonial 1 -->
+<div class="glass-pill px-6 py-4 rounded-full flex items-center gap-4">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm">star</span>
+</div>
+<p class="text-sm font-medium whitespace-nowrap text-slate-200">
+                                "HOSA changed my career path! - <span class="text-primary">John D.</span>"
+                            </p>
+</div>
+<!-- Testimonial 2 -->
+<div class="glass-pill px-6 py-4 rounded-full flex items-center gap-4">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm">star</span>
+</div>
+<p class="text-sm font-medium whitespace-nowrap text-slate-200">
+                                "Best mining sim in the country! - <span class="text-primary">Sarah M.</span>"
+                            </p>
+</div>
+<!-- Testimonial 3 -->
+<div class="glass-pill px-6 py-4 rounded-full flex items-center gap-4">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm">star</span>
+</div>
+<p class="text-sm font-medium whitespace-nowrap text-slate-200">
+                                "Highly professional instructors. - <span class="text-primary">Mike T.</span>"
+                            </p>
+</div>
+<!-- Testimonial 4 -->
+<div class="glass-pill px-6 py-4 rounded-full flex items-center gap-4">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm">star</span>
+</div>
+<p class="text-sm font-medium whitespace-nowrap text-slate-200">
+                                "Got my NATED diploma in record time! - <span class="text-primary">Linda K.</span>"
+                            </p>
+</div>
+<!-- Repeat for Seamless Loop -->
+<div class="glass-pill px-6 py-4 rounded-full flex items-center gap-4">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm">star</span>
+</div>
+<p class="text-sm font-medium whitespace-nowrap text-slate-200">
+                                "HOSA changed my career path! - <span class="text-primary">John D.</span>"
+                            </p>
+</div>
+<div class="glass-pill px-6 py-4 rounded-full flex items-center gap-4">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm">star</span>
+</div>
+<p class="text-sm font-medium whitespace-nowrap text-slate-200">
+                                "Best mining sim in the country! - <span class="text-primary">Sarah M.</span>"
+                            </p>
+</div>
+<div class="glass-pill px-6 py-4 rounded-full flex items-center gap-4">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm">star</span>
+</div>
+<p class="text-sm font-medium whitespace-nowrap text-slate-200">
+                                "Highly professional instructors. - <span class="text-primary">Mike T.</span>"
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Decorative Gradient -->
+<div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-primary/5 blur-[120px] rounded-full -z-10 pointer-events-none"></div>
+</body></html>

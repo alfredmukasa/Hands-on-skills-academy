@@ -1,0 +1,364 @@
+/* Admin Dashboard */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+/* KPI Cards */
+.kpi-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: border-color 0.2s, transform 0.2s;
+    cursor: default;
+}
+
+.kpi-card:hover {
+    border-color: rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
+}
+
+.kpi-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.kpi-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.kpi-icon .material-symbols-outlined {
+    font-size: 20px;
+}
+
+.kpi-icon-yellow {
+    background: rgba(250, 204, 20, 0.12);
+    color: #facc14;
+}
+
+.kpi-icon-cyan {
+    background: rgba(34, 211, 238, 0.12);
+    color: #22d3ee;
+}
+
+.kpi-icon-red {
+    background: rgba(239, 68, 68, 0.12);
+    color: #ef4444;
+}
+
+.kpi-icon-green {
+    background: rgba(34, 197, 94, 0.12);
+    color: #22c55e;
+}
+
+.kpi-trend {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.kpi-trend-up {
+    color: #22c55e;
+}
+
+.kpi-trend-down {
+    color: #ef4444;
+}
+
+.kpi-trend .material-symbols-outlined {
+    font-size: 14px;
+}
+
+.kpi-num {
+    font-size: 32px;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: -0.03em;
+    line-height: 1;
+}
+
+.kpi-label {
+    font-size: 12px;
+    color: #475569;
+    font-weight: 500;
+}
+
+/* Two column row */
+.dashboard-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+/* Section card header */
+.section-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px 0;
+    margin-bottom: 16px;
+}
+
+.section-card-header h3 {
+    font-size: 14px;
+    font-weight: 800;
+    color: #fff;
+}
+
+.section-card-link {
+    font-size: 11px;
+    color: #facc14;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: opacity 0.2s;
+}
+
+.section-card-link:hover {
+    opacity: 0.8;
+}
+
+.section-card-link .material-symbols-outlined {
+    font-size: 14px;
+}
+
+/* Mini table inside cards */
+.mini-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+.mini-table th {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 8px 16px;
+    text-align: left;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #334155;
+    font-weight: 700;
+}
+
+.mini-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    vertical-align: middle;
+}
+
+.mini-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.mini-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Message list */
+.msg-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.msg-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.msg-item:last-child {
+    border-bottom: none;
+}
+
+.msg-item:hover {
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.msg-item-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.msg-item-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3px;
+}
+
+.msg-sender {
+    font-size: 13px;
+    font-weight: 700;
+    color: #e2e8f0;
+}
+
+.msg-time {
+    font-size: 10px;
+    color: #475569;
+}
+
+.msg-subject {
+    font-size: 12px;
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+.msg-preview {
+    font-size: 11px;
+    color: #475569;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.msg-unread-dot {
+    width: 8px;
+    height: 8px;
+    background: #facc14;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 6px;
+}
+
+.msg-unread-dot.read {
+    background: transparent;
+}
+
+/* Upcoming appointments card */
+.appt-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.appt-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.appt-item:last-child {
+    border-bottom: none;
+}
+
+.appt-time-block {
+    text-align: center;
+    min-width: 52px;
+    background: rgba(250, 204, 20, 0.06);
+    border: 1px solid rgba(250, 204, 20, 0.15);
+    border-radius: 10px;
+    padding: 8px;
+}
+
+.appt-time {
+    font-size: 13px;
+    font-weight: 800;
+    color: #facc14;
+}
+
+.appt-day {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #64748b;
+    margin-top: 1px;
+}
+
+.appt-info {
+    flex: 1;
+}
+
+.appt-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: #e2e8f0;
+}
+
+.appt-course {
+    font-size: 11px;
+    color: #64748b;
+    margin-top: 2px;
+}
+
+/* Activity feed */
+.activity-list {
+    list-style: none;
+    padding: 0 20px;
+    margin: 0;
+}
+
+.activity-item {
+    display: flex;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+.activity-dot {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.activity-dot .material-symbols-outlined {
+    font-size: 16px;
+}
+
+.activity-text {
+    font-size: 12px;
+    color: #94a3b8;
+    line-height: 1.5;
+}
+
+.activity-text strong {
+    color: #e2e8f0;
+}
+
+.activity-time {
+    font-size: 10px;
+    color: #334155;
+    margin-top: 2px;
+}
+
+@media (max-width: 1200px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-row {
+        grid-template-columns: 1fr;
+    }
+}
