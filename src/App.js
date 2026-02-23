@@ -10,6 +10,7 @@ import About from './components/About';
 import Courses from './components/Courses';
 import Enroll from './components/Enroll';
 import Contact from './components/Contact';
+import Gallery from './components/Gallery';
 
 // Admin panel
 import AdminLogin from './admin/AdminLogin';
@@ -49,6 +50,7 @@ function App() {
                   <Route path="/about" element={<About />} />
                   <Route path="/courses" element={<Courses />} />
                   <Route path="/enroll" element={<Enroll />} />
+                  <Route path="/gallery" element={<Gallery />} />
                   <Route path="/contact" element={<Contact />} />
                 </Routes>
               </main>

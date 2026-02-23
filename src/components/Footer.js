@@ -42,6 +42,7 @@ const Footer = () => (
                 <ul>
                     <li><Link to="/about">About Us</Link></li>
                     <li><Link to="/enroll">Enroll Online</Link></li>
+                    <li><Link to="/gallery">Gallery</Link></li>
                     <li><Link to="/contact">Contact</Link></li>
                     <li><a href="#accreditations">Accreditations</a></li>
                     <li><a href="#privacy">Privacy Policy</a></li>

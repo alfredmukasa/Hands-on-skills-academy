@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>HOSA Glassmorphic Masonry Gallery</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13c8ec",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#0B0F19",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-pill {
+            background: rgba(19, 200, 236, 0.1);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(19, 200, 236, 0.2);
+        }
+
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-auto-rows: 20px;
+            gap: 24px;
+        }
+
+        .masonry-item-short {
+            grid-row-end: span 15;
+        }
+
+        .masonry-item-tall {
+            grid-row-end: span 25;
+        }
+
+        .masonry-item-medium {
+            grid-row-end: span 20;
+        }
+
+        .gallery-card:hover .caption-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-card:hover {
+            box-shadow: 0 0 30px rgba(19, 200, 236, 0.3);
+            border-color: rgba(19, 200, 236, 0.5);
+        }
+
+        .bg-orb {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            filter: blur(120px);
+            z-index: -1;
+            opacity: 0.15;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen relative overflow-x-hidden">
+    <!-- Atmospheric Background Orbs -->
+    <div class="bg-orb top-[-200px] left-[-100px] bg-primary"></div>
+    <div class="bg-orb bottom-[-200px] right-[-100px] bg-indigo-600"></div>
+    <div class="bg-orb top-[30%] right-[10%] bg-cyan-400"></div>
+    <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root">
+        <div class="layout-container flex h-full grow flex-col">
+            <!-- Navigation Header -->
+            <header class="sticky top-0 z-50 px-4 md:px-10 py-6">
+                <nav class="max-w-7xl mx-auto flex items-center justify-between glass-panel rounded-full px-8 py-3">
+                    <div class="flex items-center gap-3">
+                        <div class="bg-primary p-2 rounded-lg text-background-dark">
+                            <span class="material-symbols-outlined block text-2xl">rocket_launch</span>
+                        </div>
+                        <h2 class="text-xl font-black tracking-tighter uppercase dark:text-white">HOSA</h2>
+                    </div>
+                    <div class="hidden md:flex items-center gap-8">
+                        <a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Courses</a>
+                        <a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Safety</a>
+                        <a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Campus</a>
+                        <button
+                            class="bg-primary text-background-dark px-6 py-2 rounded-full font-bold text-sm hover:brightness-110 transition-all">
+                            Join Academy
+                        </button>
+                    </div>
+                    <div class="md:hidden">
+                        <span class="material-symbols-outlined text-3xl">menu</span>
+                    </div>
+                </nav>
+            </header>
+            <main class="max-w-7xl mx-auto w-full px-4 md:px-10 pb-20">
+                <!-- Title & Filter Section -->
+                <section class="text-center py-12">
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight dark:text-white">
+                        Skills <span class="text-primary">Gallery</span>
+                    </h1>
+                    <p class="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto mb-12 text-lg">
+                        Visualizing the next generation of industrial excellence. From deep-earth mining to precision
+                        engineering.
+                    </p>
+                    <!-- Glassmorphic Filter Bar -->
+                    <div class="flex flex-wrap justify-center gap-3 glass-pill p-2 rounded-full inline-flex mx-auto">
+                        <button
+                            class="px-6 py-2 rounded-full bg-primary text-background-dark font-bold text-sm">All</button>
+                        <button
+                            class="px-6 py-2 rounded-full hover:bg-white/10 transition-colors text-sm font-medium">Mining</button>
+                        <button
+                            class="px-6 py-2 rounded-full hover:bg-white/10 transition-colors text-sm font-medium">NATED</button>
+                        <button
+                            class="px-6 py-2 rounded-full hover:bg-white/10 transition-colors text-sm font-medium">Engineering</button>
+                        <button
+                            class="px-6 py-2 rounded-full hover:bg-white/10 transition-colors text-sm font-medium">Student
+                            Life</button>
+                    </div>
+                </section>
+                <!-- Masonry Grid -->
+                <div class="masonry-grid">
+                    <!-- Mining Item -->
+                    <div
+                        class="gallery-card masonry-item-tall relative overflow-hidden rounded-[20px] border border-white/10 transition-all duration-500 cursor-pointer">
+                        <img alt="Underground mining machinery in operation"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700"
+                            data-alt="Heavy underground mining equipment with bright lights in a dark tunnel"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuQMUy2ccY9ofeV6fhsxnp0W0N2aN7nCci_Clza-oi9F48zjyIwWwYD3j7v4UPry1DxNX9hkGSWevKqLR6sd6xcO4E6g5Vv3i4Q9pKJEq93jquBxE9Mxt8veMp7Li9my5zCU2yJwvL3rNNhL4z78n5tik0zls09BIjvbHbQzyzmS9uTvd8HmXX76ofHv2XELA7tc4S07umNQ4K2-6nGNC5cq3edJZCxk6hyZYHlQt0EXvUjRdi8ukMoIgedCjRw80gXa3f5GJRCA9k" />
+                        <div
+                            class="caption-overlay absolute inset-x-4 bottom-4 glass-panel rounded-2xl p-5 transform translate-y-full opacity-0 transition-all duration-500 flex justify-between items-center">
+                            <div>
+                                <span
+                                    class="text-[10px] uppercase tracking-widest text-primary font-bold mb-1 block">Mining</span>
+                                <h3 class="font-bold text-white">Underground Excavation</h3>
+                            </div>
+                            <span class="material-symbols-outlined text-primary">arrow_outward</span>
+                        </div>
+                    </div>
+                    <!-- Engineering Item -->
+                    <div
+                        class="gallery-card masonry-item-medium relative overflow-hidden rounded-[20px] border border-white/10 transition-all duration-500 cursor-pointer">
+                        <img alt="Electrical engineering lab setup"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700"
+                            data-alt="Modern electrical engineering lab with circuit boards and oscilloscopes"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCG7ISRoiEFQL1hlGvPUDatV1n9x7ik4nmUi3wKZacNqLXIckYV8q6RkcMc3D5AGZovrj-ukomGpwPuwFggR6yy3qpkmtjoNVGDks4aDaePgyYZfuPhF9kCoJ9wC8kOmFBwj39uoe7uka1jqDxW_YdhBRT3SXaz8QfkcNBjxcA-jGkBONPYM91cJHx-d6dWloEoMfJ5Y3UCaU0BnfZJUPKETgg0IzObcLE6PY4vKHtE1rZfXz-BlmNQs-eAGvN9igpYuIh9EUTc5Fby" />
+                        <div
+                            class="caption-overlay absolute inset-x-4 bottom-4 glass-panel rounded-2xl p-5 transform translate-y-full opacity-0 transition-all duration-500 flex justify-between items-center">
+                            <div>
+                                <span
+                                    class="text-[10px] uppercase tracking-widest text-primary font-bold mb-1 block">Engineering</span>
+                                <h3 class="font-bold text-white">Robotics Lab</h3>
+                            </div>
+                            <span class="material-symbols-outlined text-primary">arrow_outward</span>
+                        </div>
+                    </div>
+                    <!-- Student Life Item -->
+                    <div
+                        class="gallery-card masonry-item-short relative overflow-hidden rounded-[20px] border border-white/10 transition-all duration-500 cursor-pointer">
+                        <img alt="Students collaborating in a workspace"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700"
+                            data-alt="Diverse group of students working together on a technical project"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDszZK9XhCEGwGQr4eFTdwIZg12KdD0t_gXYuMcHQxcDuEuHFuGaIyH3Vt55hkZk6dpZXKiCYGYzwwx9IYEd2r-84KRGlXcMzzDiZ61eHsECkXUA3xE8CzQ0BJhfziMn6CpAxInwmXz3p2rMfQGF1M5rgQYy7EfYdvZJhTzuL5P0WfA-cmsE5YOc1lkrIenuuoJi3Rq9FesznKE9wRCCKqilaggfdKHbZ0qW3T7FAXM_0qHUcShQ-her31ImsSjp0h8FLo7Jd2gjF8T" />
+                        <div
+                            class="caption-overlay absolute inset-x-4 bottom-4 glass-panel rounded-2xl p-5 transform translate-y-full opacity-0 transition-all duration-500 flex justify-between items-center">
+                            <div>
+                                <span
+                                    class="text-[10px] uppercase tracking-widest text-primary font-bold mb-1 block">Student
+                                    Life</span>
+                                <h3 class="font-bold text-white">Design Thinking</h3>
+                            </div>
+                            <span class="material-symbols-outlined text-primary">arrow_outward</span>
+                        </div>
+                    </div>
+                    <!-- Mining Item 2 -->
+                    <div
+                        class="gallery-card masonry-item-medium relative overflow-hidden rounded-[20px] border border-white/10 transition-all duration-500 cursor-pointer">
+                        <img alt="Industrial refinery at sunset"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700"
+                            data-alt="Large industrial refinery pipes and towers at golden hour"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCRvpKf130F5I1IXByw5bNjBeMCumNGvHOHQVQoqBZ2CrGs8QcejKvBMtKHD-psAkeFrmYNkr-0yDGLVUfcF0XU5VTrr0WpGQzlXWYpoz8wHcSRFyJumW0vYNZPLui_oGUk78e6ToR-sKZKpMAE9luR4dO9l2jHrcX36AKAydn8NeY3ryuDaDnsY82yH8lFsM6m9zrFzuZYUYdZjX5avycuJOoNimrlBMHTTrNnN-SRi-9P2kKdWyaFkZuU8nGzNlxJPMziw5KHypz" />
+                        <div
+                            class="caption-overlay absolute inset-x-4 bottom-4 glass-panel rounded-2xl p-5 transform translate-y-full opacity-0 transition-all duration-500 flex justify-between items-center">
+                            <div>
+                                <span
+                                    class="text-[10px] uppercase tracking-widest text-primary font-bold mb-1 block">NATED</span>
+                                <h3 class="font-bold text-white">Chemical Processing</h3>
+                            </div>
+                            <span class="material-symbols-outlined text-primary">arrow_outward</span>
+                        </div>
+                    </div>
+                    <!-- Engineering Item 2 -->
+                    <div
+                        class="gallery-card masonry-item-tall relative overflow-hidden rounded-[20px] border border-white/10 transition-all duration-500 cursor-pointer">
+                        <img alt="Welding technician in workshop"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700"
+                            data-alt="A technician welding metal with blue sparks and safety visor"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlwP6VSTIr2keAoQlkFlSmmgNSJDLL8V2jRnZ0wbSAPDuIOqN-oMkMsDsMRRT5ePIeqNC3UARPaP8leY7lW0qPC8BbkrIg-zN35AHpulDrUcL_W9YfpqMPHKZOG78xZikliyBCt-ibQPwR3lFlpgdEqZkkP-UzwR69nOc5oNDAK6d4t-EszbiLnI34N-YvlcQEqgKTZfJybQNtEQ5TYJyco_W-od0O7ySOqOQ7xY-I5WUD0-Cg8W2U1WnmMkmGJKI2lrtffBjW7KEn" />
+                        <div
+                            class="caption-overlay absolute inset-x-4 bottom-4 glass-panel rounded-2xl p-5 transform translate-y-full opacity-0 transition-all duration-500 flex justify-between items-center">
+                            <div>
+                                <span
+                                    class="text-[10px] uppercase tracking-widest text-primary font-bold mb-1 block">Engineering</span>
+                                <h3 class="font-bold text-white">Precision Welding</h3>
+                            </div>
+                            <span class="material-symbols-outlined text-primary">arrow_outward</span>
+                        </div>
+                    </div>
+                    <!-- Mining Item 3 -->
+                    <div
+                        class="gallery-card masonry-item-short relative overflow-hidden rounded-[20px] border border-white/10 transition-all duration-500 cursor-pointer">
+                        <img alt="Construction safety helmet"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700"
+                            data-alt="Close up of a yellow industrial safety helmet on site"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC055_eeuC1jaaWOSolxEvuffMt4ag9NqPvl3DKtnneiFWw--bK8r_ejvKrdZPUdkY0OZvXb_1_LdzsTeqbFcjcm8rXEkiC57lxm-BcsU0jPHqEN7QuzW8HDqQ_gnmCcdNIAk6voLeMN6Oe2vDsljk0HAYPp_PAzePHe97F0XBON4iyQ0XQRsKXbJOHb7Ea0_033DFVg3xkfpywIxvvqm6AdDkwq_s5PUC5Fk82FGYgfvLEhcHQvH-taJR5HTyk1BFcecFp3BlwN4wV" />
+                        <div
+                            class="caption-overlay absolute inset-x-4 bottom-4 glass-panel rounded-2xl p-5 transform translate-y-full opacity-0 transition-all duration-500 flex justify-between items-center">
+                            <div>
+                                <span
+                                    class="text-[10px] uppercase tracking-widest text-primary font-bold mb-1 block">Safety</span>
+                                <h3 class="font-bold text-white">Standard Protocols</h3>
+                            </div>
+                            <span class="material-symbols-outlined text-primary">arrow_outward</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Load More Section -->
+                <div class="mt-20 text-center">
+                    <button
+                        class="glass-panel border-primary/30 text-white px-10 py-4 rounded-full font-bold hover:bg-primary/10 transition-all inline-flex items-center gap-2 group">
+                        Load More Projects
+                        <span
+                            class="material-symbols-outlined group-hover:rotate-90 transition-transform">autorenew</span>
+                    </button>
+                </div>
+            </main>
+            <!-- Footer -->
+            <footer class="mt-auto border-t border-white/10 py-12 glass-panel">
+                <div class="max-w-7xl mx-auto px-10 flex flex-col md:flex-row justify-between items-center gap-8">
+                    <div class="flex items-center gap-3 opacity-50">
+                        <span class="material-symbols-outlined">rocket_launch</span>
+                        <span class="font-bold tracking-tight">HOSA ACADEMY © 2026</span>
+                    </div>
+                    <div class="flex gap-6 text-sm font-medium text-slate-400">
+                        <a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+                        <a class="hover:text-primary transition-colors" href="#">Accreditation</a>
+                        <a class="hover:text-primary transition-colors" href="#">Portal Login</a>
+                    </div>
+                    <div class="flex gap-4">
+                        <div
+                            class="size-10 rounded-full glass-pill flex items-center justify-center cursor-pointer hover:bg-primary hover:text-background-dark transition-all">
+                            <span class="material-symbols-outlined text-sm">share</span>
+                        </div>
+                        <div
+                            class="size-10 rounded-full glass-pill flex items-center justify-center cursor-pointer hover:bg-primary hover:text-background-dark transition-all">
+                            <span class="material-symbols-outlined text-sm">mail</span>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -30,6 +30,7 @@ const Navbar = () => {
                 <nav className="navbar-links">
                     <Link to="/" className={`nav-link${isActive('/') ? ' active' : ''}`}>Home</Link>
                     <Link to="/courses" className={`nav-link${isActive('/courses') ? ' active' : ''}`}>Courses</Link>
+                    <Link to="/gallery" className={`nav-link${isActive('/gallery') ? ' active' : ''}`}>Gallery</Link>
                     <Link to="/about" className={`nav-link${isActive('/about') ? ' active' : ''}`}>About</Link>
                     <Link to="/contact" className={`nav-link${isActive('/contact') ? ' active' : ''}`}>Contact</Link>
                 </nav>
@@ -53,6 +54,7 @@ const Navbar = () => {
                 <nav className="mobile-menu glass-card">
                     <Link to="/" className={`mobile-link${isActive('/') ? ' active' : ''}`}>Home</Link>
                     <Link to="/courses" className={`mobile-link${isActive('/courses') ? ' active' : ''}`}>Courses</Link>
+                    <Link to="/gallery" className={`mobile-link${isActive('/gallery') ? ' active' : ''}`}>Gallery</Link>
                     <Link to="/about" className={`mobile-link${isActive('/about') ? ' active' : ''}`}>About</Link>
                     <Link to="/contact" className={`mobile-link${isActive('/contact') ? ' active' : ''}`}>Contact</Link>
                     <Link to="/enroll" className="btn-primary" style={{ marginTop: '12px', justifyContent: 'center', padding: '12px 24px' }}>Enroll Now</Link>
